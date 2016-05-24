@@ -32,7 +32,7 @@ class LRUCache(object):
                     break
         else:
             # Check if the length of cache exceeds the
-            # upper bound which is the current length of the cache (3 in this example).
+            # upper bound which is the current length of the cache (4 in this example).
             if len(self.item_list) > self.length:
                 self.removeItem(self.item_list[-1])
 
@@ -60,7 +60,7 @@ class LRUCache(object):
                 remove_list.append(it)
         map(lambda x: self.removeItem(x), remove_list)
 
-# Testing the Cache with 3 sample items
+# Testing the Cache with 4 sample items
 # Can test for inserting an item and validating the items after sometime based on LRU 
 def print_cache(cache):
     for i, item in enumerate(cache.item_list):
