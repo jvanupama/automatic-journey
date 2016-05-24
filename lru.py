@@ -75,12 +75,14 @@ def print_cache(cache):
 one = LRUCacheSample(1, 'one')
 two = LRUCacheSample(2, 'two')
 three = LRUCacheSample(3, 'three')
+four = LRUCacheSample(4, 'four')
 
 print ("Initial cache items ")
-cache = LRUCache(length=3, delta=5)
+cache = LRUCache(length=4, delta=5)
 cache.insertItem(one)
 cache.insertItem(two)
 cache.insertItem(three)
+cache.insertItem(four)
 print_cache(cache)
 print ("-" * 20)
 
@@ -94,9 +96,16 @@ cache.insertItem(two)
 print_cache(cache)
 print ("-" * 20)
 
+print ("Insert another existing item: {0}.".format(two.key))
+cache.insertItem(two)
+print_cache(cache)
+print ("-" * 20)
+
 print ("Validate items after a period of time")
 sleep(6) # waits for 6 seconds
 cache.validateItem()
 print_cache(cache)
 print ("#" * 20)
+        
+
         
